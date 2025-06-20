@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "SSAS_Payments", "SSAS_Payments.dwproj", "{D9AE55D1-CDE0-F986-F198-FA9526884721}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9AE55D1-CDE0-F986-F198-FA9526884721}.Development|Default.ActiveCfg = Development
+		{D9AE55D1-CDE0-F986-F198-FA9526884721}.Development|Default.Build.0 = Development
+		{D9AE55D1-CDE0-F986-F198-FA9526884721}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {479B7EB9-274D-47AF-976E-EE95C3871EB3}
+	EndGlobalSection
+EndGlobal

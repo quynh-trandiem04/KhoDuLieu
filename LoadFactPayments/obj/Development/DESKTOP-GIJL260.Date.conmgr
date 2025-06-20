@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-GIJL260.Date"
+  DTS:DTSID="{948A116F-6F3A-4087-998F-46E516ECFE4C}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-GIJL260;User ID=;Initial Catalog=Date;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-LoadFactPayments-{948A116F-6F3A-4087-998F-46E516ECFE4C}DESKTOP-GIJL260.Date;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

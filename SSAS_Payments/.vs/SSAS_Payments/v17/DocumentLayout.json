@@ -1,0 +1,136 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D9AE55D1-CDE0-F986-F198-FA9526884721}|SSAS_Payments.dwproj|D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Olist DW.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{D9AE55D1-CDE0-F986-F198-FA9526884721}|SSAS_Payments.dwproj|solutionrelative:Olist DW.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9AE55D1-CDE0-F986-F198-FA9526884721}|SSAS_Payments.dwproj|D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Dim Customers.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{D9AE55D1-CDE0-F986-F198-FA9526884721}|SSAS_Payments.dwproj|solutionrelative:Dim Customers.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9AE55D1-CDE0-F986-F198-FA9526884721}|SSAS_Payments.dwproj|D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{D9AE55D1-CDE0-F986-F198-FA9526884721}|SSAS_Payments.dwproj|solutionrelative:Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9AE55D1-CDE0-F986-F198-FA9526884721}|SSAS_Payments.dwproj|D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Dim Products.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{D9AE55D1-CDE0-F986-F198-FA9526884721}|SSAS_Payments.dwproj|solutionrelative:Dim Products.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9AE55D1-CDE0-F986-F198-FA9526884721}|SSAS_Payments.dwproj|D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Dim Sellers.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{D9AE55D1-CDE0-F986-F198-FA9526884721}|SSAS_Payments.dwproj|solutionrelative:Dim Sellers.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9AE55D1-CDE0-F986-F198-FA9526884721}|SSAS_Payments.dwproj|D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Dim Payment Type.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{D9AE55D1-CDE0-F986-F198-FA9526884721}|SSAS_Payments.dwproj|solutionrelative:Dim Payment Type.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9AE55D1-CDE0-F986-F198-FA9526884721}|SSAS_Payments.dwproj|D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Olist DW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{D9AE55D1-CDE0-F986-F198-FA9526884721}|SSAS_Payments.dwproj|solutionrelative:Olist DW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{7cc9e714-2774-4fc6-8631-a07eee703286}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dim Products.dim [Design]",
+              "DocumentMoniker": "D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Dim Products.dim",
+              "RelativeDocumentMoniker": "Dim Products.dim",
+              "ToolTip": "D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Dim Products.dim [Design]",
+              "RelativeToolTip": "Dim Products.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-23T15:53:34.23Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dim Date.dim [Design]",
+              "DocumentMoniker": "D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Dim Date.dim",
+              "RelativeDocumentMoniker": "Dim Date.dim",
+              "ToolTip": "D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Dim Date.dim [Design]",
+              "RelativeToolTip": "Dim Date.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-23T15:53:09.358Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dim Customers.dim [Design]",
+              "DocumentMoniker": "D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Dim Customers.dim",
+              "RelativeDocumentMoniker": "Dim Customers.dim",
+              "ToolTip": "D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Dim Customers.dim [Design]",
+              "RelativeToolTip": "Dim Customers.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-23T15:53:27.962Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Olist DW.cube [Design]",
+              "DocumentMoniker": "D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Olist DW.cube",
+              "RelativeDocumentMoniker": "Olist DW.cube",
+              "ToolTip": "D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Olist DW.cube [Design]",
+              "RelativeToolTip": "Olist DW.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-23T15:51:19.077Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dim Sellers.dim [Design]",
+              "DocumentMoniker": "D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Dim Sellers.dim",
+              "RelativeDocumentMoniker": "Dim Sellers.dim",
+              "ToolTip": "D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Dim Sellers.dim [Design]",
+              "RelativeToolTip": "Dim Sellers.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-23T15:53:54.206Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Dim Payment Type.dim [Design]",
+              "DocumentMoniker": "D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Dim Payment Type.dim",
+              "RelativeDocumentMoniker": "Dim Payment Type.dim",
+              "ToolTip": "D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Dim Payment Type.dim [Design]",
+              "RelativeToolTip": "Dim Payment Type.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-21T20:35:51.459Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Olist DW.dsv [Design]",
+              "DocumentMoniker": "D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Olist DW.dsv",
+              "RelativeDocumentMoniker": "Olist DW.dsv",
+              "ToolTip": "D:\\Nam3_Ky2\\Kho\\SSAS_Payments\\Olist DW.dsv [Design]",
+              "RelativeToolTip": "Olist DW.dsv [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-21T20:20:58.499Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

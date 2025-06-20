@@ -1,0 +1,3001 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/20/2025 11:27:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-GIJL260"
+  DTS:CreatorName="DESKTOP-GIJL260\ACER"
+  DTS:DTSID="{5620E3F6-A9B3-4602-BABE-7BA7D5C9E5AD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Stage_Payment"
+  DTS:PackageType="5"
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{AC28AED7-F439-4AF1-BE79-141FFC04CD82}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF - Stage Customers"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{7962729E-492B-4ECE-97C6-FB4352F4A425}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Stage Customers"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Stage Customers\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DF - Stage Customers\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Stage Customers\Data Conversion.Inputs[Data Conversion Input].Columns[customer_city]"
+                      cachedCodepage="1258"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="customer_city"
+                      lineageId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_city]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Customers\Data Conversion.Inputs[Data Conversion Input].Columns[customer_state]"
+                      cachedCodepage="1258"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="customer_state"
+                      lineageId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_state]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Customers\Data Conversion.Inputs[Data Conversion Input].Columns[customer_unique_id]"
+                      cachedCodepage="1258"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="customer_unique_id"
+                      lineageId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_unique_id]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Customers\Data Conversion.Inputs[Data Conversion Input].Columns[customer_id]"
+                      cachedCodepage="1258"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="customer_id"
+                      lineageId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DF - Stage Customers\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Output].Columns[customer_city_conversion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Output].Columns[customer_city_conversion]"
+                      name="customer_city_conversion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_city]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Output].Columns[customer_state_conversion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Output].Columns[customer_state_conversion]"
+                      name="customer_state_conversion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_state]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Output].Columns[customer_unique_id_conversion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Output].Columns[customer_unique_id_conversion]"
+                      name="customer_unique_id_conversion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_unique_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Output].Columns[customer_id_conversion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Output].Columns[customer_id_conversion]"
+                      name="customer_id_conversion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DF - Stage Customers\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DST - Stage stgOlistCustomers"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DST - Stage stgOlistCustomers]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Connections[OleDbConnection]"
+                  connectionManagerID="{8CEDCE5D-4616-4C2C-A015-7709A3E388F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OlistDWStage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input].Columns[customer_zip_code_predix]"
+                      cachedDataType="i4"
+                      cachedName="customer_zip_code_predix"
+                      externalMetadataColumnId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input].ExternalColumns[customer_zip_code_predix]"
+                      lineageId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_zip_code_predix]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input].Columns[customer_id_conversion]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="customer_id_conversion"
+                      externalMetadataColumnId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      lineageId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Output].Columns[customer_id_conversion]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input].Columns[customer_unique_id_conversion]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="customer_unique_id_conversion"
+                      externalMetadataColumnId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input].ExternalColumns[customer_unique_id]"
+                      lineageId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Output].Columns[customer_unique_id_conversion]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input].Columns[customer_city_conversion]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="customer_city_conversion"
+                      externalMetadataColumnId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input].ExternalColumns[customer_city]"
+                      lineageId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Output].Columns[customer_city_conversion]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input].Columns[customer_state_conversion]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="customer_state_conversion"
+                      externalMetadataColumnId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input].ExternalColumns[customer_state]"
+                      lineageId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Output].Columns[customer_state_conversion]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input].ExternalColumns[customer_unique_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="customer_unique_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input].ExternalColumns[customer_zip_code_predix]"
+                      dataType="i4"
+                      name="customer_zip_code_predix" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input].ExternalColumns[customer_city]"
+                      dataType="wstr"
+                      length="50"
+                      name="customer_city" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input].ExternalColumns[customer_state]"
+                      dataType="wstr"
+                      length="50"
+                      name="customer_state" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Stage Customers\SRC - Olist Customers"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - Olist Customers"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Customers]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Stage Customers\SRC - Olist Customers.Connections[OleDbConnection]"
+                  connectionManagerID="{BE4F64C3-98BB-48C0-80D0-4F9260E15736}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Olist]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      codePage="1258"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      length="50"
+                      lineageId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      name="customer_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_unique_id]"
+                      codePage="1258"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].ExternalColumns[customer_unique_id]"
+                      length="50"
+                      lineageId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_unique_id]"
+                      name="customer_unique_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_zip_code_predix]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].ExternalColumns[customer_zip_code_predix]"
+                      lineageId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_zip_code_predix]"
+                      name="customer_zip_code_predix"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_city]"
+                      codePage="1258"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].ExternalColumns[customer_city]"
+                      length="50"
+                      lineageId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_city]"
+                      name="customer_city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_state]"
+                      codePage="1258"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].ExternalColumns[customer_state]"
+                      length="50"
+                      lineageId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].Columns[customer_state]"
+                      name="customer_state"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].ExternalColumns[customer_unique_id]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      name="customer_unique_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].ExternalColumns[customer_zip_code_predix]"
+                      dataType="i4"
+                      name="customer_zip_code_predix" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].ExternalColumns[customer_city]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      name="customer_city" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output].ExternalColumns[customer_state]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      name="customer_state" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      name="customer_id" />
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Error Output].Columns[customer_unique_id]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Error Output].Columns[customer_unique_id]"
+                      name="customer_unique_id" />
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Error Output].Columns[customer_zip_code_predix]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Error Output].Columns[customer_zip_code_predix]"
+                      name="customer_zip_code_predix" />
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Error Output].Columns[customer_city]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Error Output].Columns[customer_city]"
+                      name="customer_city" />
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Error Output].Columns[customer_state]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Error Output].Columns[customer_state]"
+                      name="customer_state" />
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Stage Customers.Paths[Data Conversion Output]"
+              endId="Package\DF - Stage Customers\DST - Stage stgOlistCustomers.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\DF - Stage Customers\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DF - Stage Customers.Paths[OLE DB Source Output]"
+              endId="Package\DF - Stage Customers\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Stage Customers\SRC - Olist Customers.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF - Stage Payments"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6F467FA2-1A3A-4382-9F6F-B206C8A15156}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Stage Payments"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Stage Payments\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DF - Stage Payments\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Stage Payments\Data Conversion.Inputs[Data Conversion Input].Columns[product_id]"
+                      cachedCodepage="1258"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="product_id"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Payments\Data Conversion.Inputs[Data Conversion Input].Columns[seller_id]"
+                      cachedCodepage="1258"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="seller_id"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[seller_id]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Payments\Data Conversion.Inputs[Data Conversion Input].Columns[payment_type]"
+                      cachedCodepage="1258"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="payment_type"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[payment_type]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Payments\Data Conversion.Inputs[Data Conversion Input].Columns[customer_id]"
+                      cachedCodepage="1258"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="customer_id"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[customer_id]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Payments\Data Conversion.Inputs[Data Conversion Input].Columns[order_id]"
+                      cachedCodepage="1258"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="order_id"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[order_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DF - Stage Payments\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of product_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of product_id]"
+                      name="Copy of product_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[product_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Seller_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Seller_id]"
+                      name="Copy of Seller_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[seller_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of payment_type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of payment_type]"
+                      name="Copy of payment_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[payment_type]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of customer_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of customer_id]"
+                      name="Copy of customer_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[customer_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_id]"
+                      name="Copy of order_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[order_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DF - Stage Payments\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DST - Stage stgOlistPayments"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DST - Stage stgOlistPayments]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Connections[OleDbConnection]"
+                  connectionManagerID="{8CEDCE5D-4616-4C2C-A015-7709A3E388F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OlistDWStage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].Columns[payment_installments]"
+                      cachedDataType="i4"
+                      cachedName="payment_installments"
+                      externalMetadataColumnId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].ExternalColumns[payment_installments]"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[payment_installments]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].Columns[payment_value]"
+                      cachedDataType="numeric"
+                      cachedName="payment_value"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].ExternalColumns[payment_value]"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[payment_value]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].Columns[order_approved_at]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="order_approved_at"
+                      externalMetadataColumnId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].ExternalColumns[order_approved_at]"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[order_approved_at]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].Columns[Copy of product_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of product_id"
+                      externalMetadataColumnId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      lineageId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of product_id]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].Columns[Copy of payment_type]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of payment_type"
+                      externalMetadataColumnId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].ExternalColumns[payment_type]"
+                      lineageId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of payment_type]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].Columns[Copy of customer_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of customer_id"
+                      externalMetadataColumnId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      lineageId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of customer_id]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].Columns[Copy of Seller_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Seller_id"
+                      externalMetadataColumnId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].ExternalColumns[seller_id]"
+                      lineageId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Seller_id]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].Columns[Copy of order_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of order_id"
+                      externalMetadataColumnId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      lineageId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].ExternalColumns[payment_type]"
+                      dataType="wstr"
+                      length="50"
+                      name="payment_type" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].ExternalColumns[payment_installments]"
+                      dataType="i4"
+                      name="payment_installments" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].ExternalColumns[payment_value]"
+                      dataType="numeric"
+                      name="payment_value"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].ExternalColumns[order_approved_at]"
+                      dataType="dbTimeStamp"
+                      name="order_approved_at" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input].ExternalColumns[seller_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="seller_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Stage Payments\SRC - Olist FactPayment"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - Olist FactPayment"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    op.order_id,
+    c.customer_id,
+    oi.product_id,
+    oi.seller_id,
+    od.order_approved_at,
+    op.payment_type,
+    op.payment_installments,
+    op.payment_value
+FROM dbo.OrderPayments op
+JOIN dbo.OrderDataset od ON op.order_id = od.order_id
+JOIN dbo.Customers c ON od.customer_id = c.customer_id
+JOIN dbo.OrderItems oi ON op.order_id = oi.order_id
+JOIN dbo.Products p ON oi.product_id = p.product_id
+JOIN dbo.Sellers s ON oi.seller_id = s.seller_id</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Connections[OleDbConnection]"
+                  connectionManagerID="{BE4F64C3-98BB-48C0-80D0-4F9260E15736}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Olist]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[product_id]"
+                      codePage="1258"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      length="50"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[payment_type]"
+                      codePage="1258"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].ExternalColumns[payment_type]"
+                      length="50"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[payment_type]"
+                      name="payment_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[payment_installments]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].ExternalColumns[payment_installments]"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[payment_installments]"
+                      name="payment_installments"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[payment_value]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].ExternalColumns[payment_value]"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[payment_value]"
+                      name="payment_value"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[order_approved_at]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].ExternalColumns[order_approved_at]"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[order_approved_at]"
+                      name="order_approved_at"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      codePage="1258"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      length="50"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      name="customer_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[order_id]"
+                      codePage="1258"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].ExternalColumns[order_id]"
+                      length="50"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[order_id]"
+                      name="order_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[seller_id]"
+                      codePage="1258"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].ExternalColumns[seller_id]"
+                      length="50"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].Columns[seller_id]"
+                      name="seller_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].ExternalColumns[payment_type]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      name="payment_type" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].ExternalColumns[payment_installments]"
+                      dataType="i4"
+                      name="payment_installments" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].ExternalColumns[payment_value]"
+                      dataType="numeric"
+                      name="payment_value"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].ExternalColumns[order_approved_at]"
+                      dataType="dbTimeStamp"
+                      name="order_approved_at" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].ExternalColumns[order_id]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output].ExternalColumns[seller_id]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      name="seller_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[order_id]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[order_id]"
+                      name="order_id" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[payment_type]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[payment_type]"
+                      name="payment_type" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[seller_id]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[seller_id]"
+                      name="seller_id" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[payment_installments]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[payment_installments]"
+                      name="payment_installments" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[payment_value]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[payment_value]"
+                      name="payment_value"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[order_approved_at]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[order_approved_at]"
+                      name="order_approved_at" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      name="customer_id" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Stage Payments.Paths[Data Conversion Output]"
+              endId="Package\DF - Stage Payments\DST - Stage stgOlistPayments.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\DF - Stage Payments\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DF - Stage Payments.Paths[OLE DB Source Output]"
+              endId="Package\DF - Stage Payments\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Stage Payments\SRC - Olist FactPayment.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF - Stage Products"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{90a5a540-c12d-41a8-8494-f257bbcdea47}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Stage Products"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Stage Products\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DF - Stage Products\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Stage Products\Data Conversion.Inputs[Data Conversion Input].Columns[product_id]"
+                      cachedCodepage="1258"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="product_id"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Products\Data Conversion.Inputs[Data Conversion Input].Columns[product_category_name]"
+                      cachedCodepage="1258"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="product_category_name"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_category_name]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Products\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DF - Stage Products\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Products\Data Conversion.Outputs[Data Conversion Output].Columns[product_id_convension]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DF - Stage Products\Data Conversion.Outputs[Data Conversion Output].Columns[product_id_convension]"
+                      name="product_id_convension"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF - Stage Products\Data Conversion.Outputs[Data Conversion Output].Columns[product_category_name_convension]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DF - Stage Products\Data Conversion.Outputs[Data Conversion Output].Columns[product_category_name_convension]"
+                      name="product_category_name_convension"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_category_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Stage Products\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DF - Stage Products\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Products\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Products\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Products\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Stage Products\DST - Stage stgOlistProducts"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DST - Stage stgOlistProducts"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DST - Stage stgOlistProducts]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Connections[OleDbConnection]"
+                  connectionManagerID="{8CEDCE5D-4616-4C2C-A015-7709A3E388F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OlistDWStage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].Columns[product_name_length]"
+                      cachedDataType="numeric"
+                      cachedName="product_name_length"
+                      cachedPrecision="9"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_name_length]"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_name_length]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].Columns[product_description_length]"
+                      cachedDataType="numeric"
+                      cachedName="product_description_length"
+                      cachedPrecision="10"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_description_length]"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_description_length]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].Columns[product_photos_qty]"
+                      cachedDataType="numeric"
+                      cachedName="product_photos_qty"
+                      cachedPrecision="10"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_photos_qty]"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_photos_qty]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].Columns[product_weight_g]"
+                      cachedDataType="numeric"
+                      cachedName="product_weight_g"
+                      cachedPrecision="10"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_weight_g]"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_weight_g]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].Columns[product_length_cm]"
+                      cachedDataType="numeric"
+                      cachedName="product_length_cm"
+                      cachedPrecision="10"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_length_cm]"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_length_cm]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].Columns[product_height_cm]"
+                      cachedDataType="numeric"
+                      cachedName="product_height_cm"
+                      cachedPrecision="10"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_height_cm]"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_height_cm]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].Columns[product_width_cm]"
+                      cachedDataType="numeric"
+                      cachedName="product_width_cm"
+                      cachedPrecision="10"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_width_cm]"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_width_cm]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].Columns[product_id_convension]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="product_id_convension"
+                      externalMetadataColumnId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      lineageId="Package\DF - Stage Products\Data Conversion.Outputs[Data Conversion Output].Columns[product_id_convension]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].Columns[product_category_name_convension]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="product_category_name_convension"
+                      externalMetadataColumnId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_category_name]"
+                      lineageId="Package\DF - Stage Products\Data Conversion.Outputs[Data Conversion Output].Columns[product_category_name_convension]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_category_name]"
+                      dataType="wstr"
+                      length="50"
+                      name="product_category_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_name_length]"
+                      dataType="numeric"
+                      name="product_name_length"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_description_length]"
+                      dataType="numeric"
+                      name="product_description_length"
+                      precision="10"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_photos_qty]"
+                      dataType="numeric"
+                      name="product_photos_qty"
+                      precision="10"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_weight_g]"
+                      dataType="numeric"
+                      name="product_weight_g"
+                      precision="10"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_length_cm]"
+                      dataType="numeric"
+                      name="product_length_cm"
+                      precision="10"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_height_cm]"
+                      dataType="numeric"
+                      name="product_height_cm"
+                      precision="10"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input].ExternalColumns[product_width_cm]"
+                      dataType="numeric"
+                      name="product_width_cm"
+                      precision="10"
+                      scale="1" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Stage Products\SRC - Olist Products"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - Olist Products"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Products]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Stage Products\SRC - Olist Products.Connections[OleDbConnection]"
+                  connectionManagerID="{BE4F64C3-98BB-48C0-80D0-4F9260E15736}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Olist]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_id]"
+                      codePage="1258"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      length="50"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_category_name]"
+                      codePage="1258"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_category_name]"
+                      length="50"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_category_name]"
+                      name="product_category_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_name_length]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_name_length]"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_name_length]"
+                      name="product_name_length"
+                      precision="9"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_description_length]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_description_length]"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_description_length]"
+                      name="product_description_length"
+                      precision="10"
+                      scale="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_photos_qty]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_photos_qty]"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_photos_qty]"
+                      name="product_photos_qty"
+                      precision="10"
+                      scale="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_weight_g]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_weight_g]"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_weight_g]"
+                      name="product_weight_g"
+                      precision="10"
+                      scale="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_length_cm]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_length_cm]"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_length_cm]"
+                      name="product_length_cm"
+                      precision="10"
+                      scale="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_height_cm]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_height_cm]"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_height_cm]"
+                      name="product_height_cm"
+                      precision="10"
+                      scale="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_width_cm]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_width_cm]"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].Columns[product_width_cm]"
+                      name="product_width_cm"
+                      precision="10"
+                      scale="1"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_category_name]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      name="product_category_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_name_length]"
+                      dataType="numeric"
+                      name="product_name_length"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_description_length]"
+                      dataType="numeric"
+                      name="product_description_length"
+                      precision="10"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_photos_qty]"
+                      dataType="numeric"
+                      name="product_photos_qty"
+                      precision="10"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_weight_g]"
+                      dataType="numeric"
+                      name="product_weight_g"
+                      precision="10"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_length_cm]"
+                      dataType="numeric"
+                      name="product_length_cm"
+                      precision="10"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_height_cm]"
+                      dataType="numeric"
+                      name="product_height_cm"
+                      precision="10"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output].ExternalColumns[product_width_cm]"
+                      dataType="numeric"
+                      name="product_width_cm"
+                      precision="10"
+                      scale="1" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_category_name]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_category_name]"
+                      name="product_category_name" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_name_length]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_name_length]"
+                      name="product_name_length"
+                      precision="9"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_description_length]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_description_length]"
+                      name="product_description_length"
+                      precision="10"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_photos_qty]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_photos_qty]"
+                      name="product_photos_qty"
+                      precision="10"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_weight_g]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_weight_g]"
+                      name="product_weight_g"
+                      precision="10"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_length_cm]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_length_cm]"
+                      name="product_length_cm"
+                      precision="10"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_height_cm]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_height_cm]"
+                      name="product_height_cm"
+                      precision="10"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_width_cm]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[product_width_cm]"
+                      name="product_width_cm"
+                      precision="10"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Stage Products.Paths[Data Conversion Output]"
+              endId="Package\DF - Stage Products\DST - Stage stgOlistProducts.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\DF - Stage Products\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DF - Stage Products.Paths[OLE DB Source Output]"
+              endId="Package\DF - Stage Products\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Stage Products\SRC - Olist Products.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF - Stage Sellers"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{806C60B9-04B3-41E2-BCC0-0AED97BFF849}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Stage Sellers"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Stage Sellers\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DF - Stage Sellers\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Stage Sellers\Data Conversion.Inputs[Data Conversion Input].Columns[Seller_id]"
+                      cachedCodepage="1258"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Seller_id"
+                      lineageId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].Columns[Seller_id]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Sellers\Data Conversion.Inputs[Data Conversion Input].Columns[seller_city]"
+                      cachedCodepage="1258"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="seller_city"
+                      lineageId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].Columns[seller_city]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Sellers\Data Conversion.Inputs[Data Conversion Input].Columns[seller_state]"
+                      cachedCodepage="1258"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="seller_state"
+                      lineageId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].Columns[seller_state]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Sellers\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DF - Stage Sellers\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\Data Conversion.Outputs[Data Conversion Output].Columns[Seller_id_conversion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DF - Stage Sellers\Data Conversion.Outputs[Data Conversion Output].Columns[Seller_id_conversion]"
+                      name="Seller_id_conversion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].Columns[Seller_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\Data Conversion.Outputs[Data Conversion Output].Columns[seller_city_conversion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DF - Stage Sellers\Data Conversion.Outputs[Data Conversion Output].Columns[seller_city_conversion]"
+                      name="seller_city_conversion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].Columns[seller_city]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\Data Conversion.Outputs[Data Conversion Output].Columns[seller_state_conversion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DF - Stage Sellers\Data Conversion.Outputs[Data Conversion Output].Columns[seller_state_conversion]"
+                      name="seller_state_conversion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].Columns[seller_state]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Stage Sellers\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DF - Stage Sellers\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Sellers\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Sellers\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Stage Sellers\DST - Stage stgOlistSales"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DST - Stage stgOlistSales"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DST - Stage stgOlistSales]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Connections[OleDbConnection]"
+                  connectionManagerID="{8CEDCE5D-4616-4C2C-A015-7709A3E388F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OlistDWStage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Inputs[OLE DB Destination Input].Columns[Seller_zip_code_prefix]"
+                      cachedDataType="i4"
+                      cachedName="Seller_zip_code_prefix"
+                      externalMetadataColumnId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Inputs[OLE DB Destination Input].ExternalColumns[Seller_zip_code_prefix]"
+                      lineageId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].Columns[Seller_zip_code_prefix]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Inputs[OLE DB Destination Input].Columns[Seller_id_conversion]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Seller_id_conversion"
+                      externalMetadataColumnId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Inputs[OLE DB Destination Input].ExternalColumns[Seller_id]"
+                      lineageId="Package\DF - Stage Sellers\Data Conversion.Outputs[Data Conversion Output].Columns[Seller_id_conversion]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Inputs[OLE DB Destination Input].Columns[seller_city_conversion]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="seller_city_conversion"
+                      externalMetadataColumnId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Inputs[OLE DB Destination Input].ExternalColumns[seller_city]"
+                      lineageId="Package\DF - Stage Sellers\Data Conversion.Outputs[Data Conversion Output].Columns[seller_city_conversion]" />
+                    <inputColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Inputs[OLE DB Destination Input].Columns[seller_state_conversion]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="seller_state_conversion"
+                      externalMetadataColumnId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Inputs[OLE DB Destination Input].ExternalColumns[seller_state]"
+                      lineageId="Package\DF - Stage Sellers\Data Conversion.Outputs[Data Conversion Output].Columns[seller_state_conversion]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Inputs[OLE DB Destination Input].ExternalColumns[Seller_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="Seller_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Inputs[OLE DB Destination Input].ExternalColumns[Seller_zip_code_prefix]"
+                      dataType="i4"
+                      name="Seller_zip_code_prefix" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Inputs[OLE DB Destination Input].ExternalColumns[seller_city]"
+                      dataType="wstr"
+                      length="50"
+                      name="seller_city" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Inputs[OLE DB Destination Input].ExternalColumns[seller_state]"
+                      dataType="wstr"
+                      length="50"
+                      name="seller_state" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Stage Sellers\SRC - Olist Sales"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - Olist Sales"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Sellers]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Stage Sellers\SRC - Olist Sales.Connections[OleDbConnection]"
+                  connectionManagerID="{BE4F64C3-98BB-48C0-80D0-4F9260E15736}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Olist]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].Columns[Seller_id]"
+                      codePage="1258"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].ExternalColumns[Seller_id]"
+                      length="50"
+                      lineageId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].Columns[Seller_id]"
+                      name="Seller_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].Columns[Seller_zip_code_prefix]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].ExternalColumns[Seller_zip_code_prefix]"
+                      lineageId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].Columns[Seller_zip_code_prefix]"
+                      name="Seller_zip_code_prefix"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].Columns[seller_city]"
+                      codePage="1258"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].ExternalColumns[seller_city]"
+                      length="50"
+                      lineageId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].Columns[seller_city]"
+                      name="seller_city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].Columns[seller_state]"
+                      codePage="1258"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].ExternalColumns[seller_state]"
+                      length="50"
+                      lineageId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].Columns[seller_state]"
+                      name="seller_state"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].ExternalColumns[Seller_id]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      name="Seller_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].ExternalColumns[Seller_zip_code_prefix]"
+                      dataType="i4"
+                      name="Seller_zip_code_prefix" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].ExternalColumns[seller_city]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      name="seller_city" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output].ExternalColumns[seller_state]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      name="seller_state" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Error Output].Columns[Seller_id]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Error Output].Columns[Seller_id]"
+                      name="Seller_id" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Error Output].Columns[Seller_zip_code_prefix]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Error Output].Columns[Seller_zip_code_prefix]"
+                      name="Seller_zip_code_prefix" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Error Output].Columns[seller_city]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Error Output].Columns[seller_city]"
+                      name="seller_city" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Error Output].Columns[seller_state]"
+                      codePage="1258"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Error Output].Columns[seller_state]"
+                      name="seller_state" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Stage Sellers.Paths[Data Conversion Output]"
+              endId="Package\DF - Stage Sellers\DST - Stage stgOlistSales.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\DF - Stage Sellers\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DF - Stage Sellers.Paths[OLE DB Source Output]"
+              endId="Package\DF - Stage Sellers\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Stage Sellers\SRC - Olist Sales.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Truncate Stage Tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{795B8187-8588-491F-B291-05D5EDE603D9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Truncate Stage Tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8CEDCE5D-4616-4C2C-A015-7709A3E388F3}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [DST - Stage stgOlistCustomers];&#xA;TRUNCATE TABLE [DST - Stage stgOlistPayments];&#xA;TRUNCATE TABLE [DST - Stage stgOlistProducts];&#xA;TRUNCATE TABLE [DST - Stage stgOlistSales];&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{2BECD99C-EF7B-4458-BFDE-8104714F0773}"
+      DTS:From="Package\SQL Truncate Stage Tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF - Stage Customers" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{BAFC34D3-ABA9-4E21-97DB-ABA844477DAE}"
+      DTS:From="Package\SQL Truncate Stage Tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DF - Stage Sellers" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{4C9EE9BD-2885-4FDC-9B1E-FD0098F74FD6}"
+      DTS:From="Package\SQL Truncate Stage Tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\DF - Stage Products" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{3251D973-6F13-4842-8BDC-745C12EC34A1}"
+      DTS:From="Package\SQL Truncate Stage Tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\DF - Stage Payments" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\DF - Stage Customers"
+          TopLeft="325.714286407646,128.470588122684" />
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\DF - Stage Payments"
+          TopLeft="740.816328107616,134.369747781379" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\DF - Stage Products"
+          TopLeft="520.000001106944,132.294117531098" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\DF - Stage Sellers"
+          TopLeft="120.714285971255,124.647058714271" />
+        <NodeLayout
+          Size="206.4,41.6"
+          Id="Package\SQL Truncate Stage Tables"
+          TopLeft="404.693878412508,19.5546218315991" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="488.053878412508,61.1546218315991">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-71.5395920048617,67.3159662910852"
+              Start="0,0"
+              End="-71.5395920048617,59.8159662910852">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.0785749894129" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.0785749894129"
+                    Point2="0,30.0785749894129"
+                    Point3="-4,30.0785749894129" />
+                  <mssgle:LineSegment
+                    End="-67.5395920048617,30.0785749894129" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-67.5395920048617,30.0785749894129"
+                    Point2="-71.5395920048617,30.0785749894129"
+                    Point3="-71.5395920048617,34.0785749894129" />
+                  <mssgle:LineSegment
+                    End="-71.5395920048617,59.8159662910852" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="448.373878412508,61.1546218315991">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-246.459592441253,63.4924368826723"
+              Start="0,0"
+              End="-246.459592441253,55.9924368826723">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.881737765762" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.881737765762"
+                    Point2="0,18.881737765762"
+                    Point3="-4,18.881737765762" />
+                  <mssgle:LineSegment
+                    End="-242.459592441253,18.881737765762" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-242.459592441253,18.881737765762"
+                    Point2="-246.459592441253,18.881737765762"
+                    Point3="-246.459592441253,22.881737765762" />
+                  <mssgle:LineSegment
+                    End="-246.459592441253,55.9924368826723" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="527.733878412508,61.1546218315991">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="78.2661226944359,71.1394956994993"
+              Start="0,0"
+              End="78.2661226944359,63.6394956994993">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.7870302396562" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.7870302396562"
+                    Point2="0,31.7870302396562"
+                    Point3="4,31.7870302396562" />
+                  <mssgle:LineSegment
+                    End="74.2661226944359,31.7870302396562" />
+                  <mssgle:CubicBezierSegment
+                    Point1="74.2661226944359,31.7870302396562"
+                    Point2="78.2661226944359,31.7870302396562"
+                    Point3="78.2661226944359,35.7870302396562" />
+                  <mssgle:LineSegment
+                    End="78.2661226944359,63.6394956994993" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="567.413878412508,61.1546218315991">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="262.202449695108,73.2151259497799"
+              Start="0,0"
+              End="262.202449695108,65.7151259497799">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.7731256909476" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.7731256909476"
+                    Point2="0,21.7731256909476"
+                    Point3="4,21.7731256909476" />
+                  <mssgle:LineSegment
+                    End="258.202449695108,21.7731256909476" />
+                  <mssgle:CubicBezierSegment
+                    Point1="258.202449695108,21.7731256909476"
+                    Point2="262.202449695108,21.7731256909476"
+                    Point3="262.202449695108,25.7731256909476" />
+                  <mssgle:LineSegment
+                    End="262.202449695108,65.7151259497799" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF - Stage Customers">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\DF - Stage Customers\SRC - Olist Customers"
+          TopLeft="415.999993801117,70.9999989420176" />
+        <NodeLayout
+          Size="223.2,41.6"
+          Id="Package\DF - Stage Customers\DST - Stage stgOlistCustomers"
+          TopLeft="398.999994054437,272.999995931983" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\DF - Stage Customers\Data Conversion"
+          TopLeft="432.999993547797,160.999997600913" />
+        <EdgeLayout
+          Id="Package\DF - Stage Customers.Paths[OLE DB Source Output]"
+          TopLeft="508.699993674457,112.599998942018">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.3999986588955"
+              Start="0,0"
+              End="0,40.8999986588955">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.8999986588955" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - Stage Customers.Paths[Data Conversion Output]"
+          TopLeft="510.599993801117,202.599997600913">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70.3999983310697"
+              Start="0,0"
+              End="0,62.8999983310697">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.8999983310697" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Stage Customers\SRC - Olist Customers">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Stage Customers\DST - Stage stgOlistCustomers">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF - Stage Payments">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="192.8,41.6"
+          Id="Package\DF - Stage Payments\SRC - Olist FactPayment"
+          TopLeft="422.999993696809,50.9999992400408" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\DF - Stage Payments\Data Conversion"
+          TopLeft="440.999993428588,141.999997884035" />
+        <NodeLayout
+          Size="219.2,41.6"
+          Id="Package\DF - Stage Payments\DST - Stage stgOlistPayments"
+          TopLeft="412.99999384582,234.999996498227" />
+        <EdgeLayout
+          Id="Package\DF - Stage Payments.Paths[OLE DB Source Output]"
+          TopLeft="518.999993562698,92.5999992400408">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.3999986439943"
+              Start="0,0"
+              End="0,41.8999986439943">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.8999986439943" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - Stage Payments.Paths[Data Conversion Output]"
+          TopLeft="520.599993637204,183.599997884035">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.399998614192"
+              Start="0,0"
+              End="0,43.899998614192">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.899998614192" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Stage Payments\DST - Stage stgOlistPayments">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF - Stage Products">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\DF - Stage Products\SRC - Olist Products"
+          TopLeft="449.999993294478,87.9999986886978" />
+        <NodeLayout
+          Size="213.6,41.6"
+          Id="Package\DF - Stage Products\DST - Stage stgOlistProducts"
+          TopLeft="432.999993547797,268.999995991588" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\DF - Stage Products\Data Conversion"
+          TopLeft="457.999993175268,180.99999730289" />
+        <EdgeLayout
+          Id="Package\DF - Stage Products.Paths[OLE DB Source Output]"
+          TopLeft="535.999993234873,129.599998688698">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.3999986141922"
+              Start="0,0"
+              End="0,43.8999986141922">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.8999986141922" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - Stage Products.Paths[Data Conversion Output]"
+          TopLeft="537.699993361533,222.59999730289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.399998688698"
+              Start="0,0"
+              End="0,38.899998688698">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.899998688698" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Stage Products\SRC - Olist Products">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Stage Products\DST - Stage stgOlistProducts">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF - Stage Sellers">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="197.6,41.6"
+          Id="Package\DF - Stage Sellers\DST - Stage stgOlistSales"
+          TopLeft="454.999993219972,256.999996170402" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\DF - Stage Sellers\SRC - Olist Sales"
+          TopLeft="482.999992802739,62.9999990612269" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\DF - Stage Sellers\Data Conversion"
+          TopLeft="477.999992877245,157.999997645617" />
+        <EdgeLayout
+          Id="Package\DF - Stage Sellers.Paths[OLE DB Source Output]"
+          TopLeft="558.299992839992,104.599999061227">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.3999985843897"
+              Start="0,0"
+              End="0,45.8999985843897">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.8999985843897" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - Stage Sellers.Paths[Data Conversion Output]"
+          TopLeft="554.699993048608,199.599997645617">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.399998524785"
+              Start="0,0"
+              End="0,49.899998524785">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.899998524785" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Stage Sellers\DST - Stage stgOlistSales">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Stage Sellers\SRC - Olist Sales">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
